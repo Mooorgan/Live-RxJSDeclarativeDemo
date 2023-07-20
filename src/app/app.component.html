@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<app-loading *ngIf="showLoader$ | async"></app-loading>
+
+<div class="container">
+  <div
+    class="alert alert-success"
+    *ngIf="successMessage$ | async as successMessage"
+  >
+    {{ successMessage }}
+  </div>
+  <div class="alert alert-danger" *ngIf="errorMessage$ | async as errorMessage">
+    {{ errorMessage }}
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="colmd-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
